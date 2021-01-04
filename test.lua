@@ -19,6 +19,12 @@ function foo:bar(n)
   return n * math.random() * 100
 end
 
+ NOT_GLOBAL = 0
+
+GLOBAL1 = true
+ANOTHER_GLOBAL = true
+_GLOBALVAR = true
+
 local rng, cos = math.random, math.cos -- Localize these
 
 local foo = Foo.new() -- Let's make foo!
