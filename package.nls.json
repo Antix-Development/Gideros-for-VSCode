@@ -1,0 +1,6 @@
+{
+    "gideros.java.home": "Specifies the path to the java home",
+    "gideros.source.roots": "Source roots of your project",
+    "gideros.completion.caseSensitive": "Case sensitive completion",
+    "gideros.codeLens": "Show codeLens or not"
+}

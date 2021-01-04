@@ -1,0 +1,145 @@
+{
+    "name": "gideros",
+    "displayName": "Gideros",
+    "description": "Gideros for VSCode",
+    "version": "1.0.0",
+    "icon": "res/icon.png",
+    "publisher": "antixdevelopment",
+    "keywords": ["gideros", "lua", "language server, snippets"],
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:lua"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Antix-Development"
+    },
+    "bugs": {
+        "url": "https://github.com/Antix-Development"
+    },
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "emmy.restartServer",
+                "title": "Gideros: Restart Lua Server"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "lua",
+                "path": "./snippets/snippets.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "lua",
+                "extensions": [
+                    ".lua"
+                ],
+                "aliases": [
+                    "Gideros"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lua",
+                "scopeName": "source.lua",
+                "path": "./syntaxes/lua.tmLanguage.json"
+            }
+        ],
+        "breakpoints": [
+            {
+                "language": "lua"
+            }
+        ],
+        "configuration": {
+            "title": "Gideros",
+            "properties": {
+                "gideros.java.home": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "description": "%gideros.java.home%"
+                },
+                "gideros.source.roots": {
+                    "type": [
+                        "array"
+                    ],
+                    "default": [],
+                    "description": "%gideros.source.roots%"
+                },
+                "gideros.completion.caseSensitive": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%gideros.completion.caseSensitive%"
+                },
+                "gideros.codeLens": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "%gideros.codeLens%"
+                },
+                "gideros.colors.parameter": {
+                    "type": "string",
+                    "default": "#99FFCC"
+                },
+                "gideros.colors.global": {
+                    "type": "string",
+                    "default": "#FF6699"
+                },
+                "gideros.colors.doc_type": {
+                    "type": "string",
+                    "default": "#66CCFF"
+                }
+            }
+        },
+        "configurationDefaults": {
+            "[lua]": {
+                "editor.quickSuggestions": {
+                    "other": true,
+                    "comments": true,
+                    "strings": true
+                }
+            }
+        },
+        "jsonValidation": [
+            {
+                "fileMatch": "emmy.config.json",
+                "url": "./syntaxes/emmy.config.schema.json"
+            }
+        ],
+        "colors": []
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./build/prepare-version && npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "tslint": "^5.8.0",
+        "typescript": "^4.0.2",
+        "@types/vscode": "^1.27.0",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.1",
+        "download": "^7.1.0",
+        "filecopy": "^4.0.2"
+    },
+    "dependencies": {
+        "vscode-languageclient": "5.1.0",
+        "vscode-debugadapter": "1.31.0",
+        "vscode-debugprotocol": "1.31.0",
+        "lua-fmt": "^2.6.0",
+        "smart-buffer": "^4.0.1",
+        "iconv-lite": "^0.5.0"
+    }
+}

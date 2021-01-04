@@ -1,0 +1,11 @@
+out
+node_modules
+.vscode-test
+*.iml
+.gradle
+.idea
+temp
+/debugger
+/server
+/package-lock.json
+/temp
